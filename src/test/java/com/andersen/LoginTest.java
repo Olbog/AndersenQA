@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginTest {
     public static LoginPage loginPage;
+    public static ProfilePage profilePage;
     public static WebDriver driver;
 
 
@@ -23,9 +24,8 @@ public class LoginTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         driver.get(ConfProperties.getProperty("loginpage"));
-        driver.findElement(By.id("signupform- email")).sendKeys( "testLogin@test.com");
-        driver.findElement(By.id("signup_btn")).click();
         loginPage = new LoginPage(driver);
+        profilePage = new ProfilePage(driver);
         driver = new ChromeDriver();
     }
     @Test
@@ -34,6 +34,19 @@ public class LoginTest {
         loginPage.clickLoginBtn();
         loginPage.inputPasswd(ConfProperties.getProperty("password"));
         loginPage.clickLoginBtn();
-    }
+        String user = profilePage.getUserName();
+        Assert.assertEquals(ConfProperties.getProperty("login"), user); }
+
+    @AfterClass
+    public static void tearDown() {
+        profilePage.entryMenu();
+        profilePage.userLogout();
+        driver.quit(); }
+
 }
 
+
+/**
+ *         driver.findElement(By.id("signupform- email")).sendKeys( "testLogin@test.com");
+ *         driver.findElement(By.id("signup_btn")).click();
+ */
