@@ -17,7 +17,8 @@ public class LoginTest {
 
     @BeforeClass
     public static void setup(){
-        System.setProperties("webdriver.chrome.driver", ConfProperties.getProperty ("chromedriver"));
+
+        System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty ("chromedriver"));
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -35,3 +36,4 @@ public class LoginTest {
         loginPage.clickLoginBtn();
     }
 }
+//System.setProperties("webdriver.chrome.driver", "C:\\Windows\\System32\\chromedriver.exe");

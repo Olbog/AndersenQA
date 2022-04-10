@@ -53,8 +53,9 @@ public class LoginPage {
 
     /**
      * метод для нажатия кнопки пароля
+     * @param password
      */
-    public void inputPasswd() {
+    public void inputPasswd(String password) {
         passwdField.sendKeys(); }
     /**
      * метод для осуществления нажатия кнопки входа в аккаунт
