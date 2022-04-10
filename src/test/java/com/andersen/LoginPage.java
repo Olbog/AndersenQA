@@ -16,31 +16,31 @@ public class LoginPage {
         this.driver = driver; }
 
     /**
-     * определение локатора поля ввода логина
+     * определение локатора поля ввода логина +
      */
-    @FindBy(xpath = "//*[@id='signupform-username']")
+    @FindBy(xpath = "//*[@id=\"signupform-username\"]")
     private WebElement loginField;
 
     /**
-     * определение локатора кнопки зарегистрироваться
+     * определение локатора кнопки зарегистрироваться +
      */
     @FindBy(xpath = "//*[@id=\"signup_btn\"]")
     private WebElement loginBtn;
 
     /**
-     * определение локатора поля email
+     * определение локатора поля email +
      */
     @FindBy(xpath = "//*[@id=\"signupform-email\"]")
     private WebElement emailField;
 
     /**
-     * определение локатора поля ввода пароля
+     * определение локатора поля ввода пароля +
      */
     @FindBy(xpath = "//*[@id=\"signupform-password\"]")
     private WebElement passwdField;
 
     /**
-     * метод для ввода логина
+     * метод для ввода логина +
      */
     public void inputLogin(String login) {
         loginField.sendKeys(login); }
@@ -48,17 +48,16 @@ public class LoginPage {
     /**
      * метод для ввода email
      */
-    public void inputEmail(String login) {
-        emailField.sendKeys(login); }
+    public void inputEmail(String email) {
+        emailField.sendKeys(email); }
 
     /**
-     * метод для нажатия кнопки пароля
-     * @param password
+     * метод ввода пароля +
      */
-    public void inputPasswd(String password) {
-        passwdField.sendKeys(); }
+    public void inputPasswd(String passwd) {
+        passwdField.sendKeys(passwd); }
     /**
-     * метод для осуществления нажатия кнопки входа в аккаунт
+     * метод для осуществления нажатия кнопки зарегистрироваться +
      */
     public void clickLoginBtn() {
         loginBtn.click(); }

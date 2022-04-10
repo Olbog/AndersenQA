@@ -22,7 +22,7 @@ public class LoginTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-        driver.get("https://diary.ru/user/registration");
+        driver.get(ConfProperties.getProperty("loginpage"));
         driver.findElement(By.id("signupform- email")).sendKeys( "testLogin@test.com");
         driver.findElement(By.id("signup_btn")).click();
         loginPage = new LoginPage(driver);
@@ -36,4 +36,4 @@ public class LoginTest {
         loginPage.clickLoginBtn();
     }
 }
-//System.setProperties("webdriver.chrome.driver", "C:\\Windows\\System32\\chromedriver.exe");
+
