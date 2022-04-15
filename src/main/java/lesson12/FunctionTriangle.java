@@ -1,5 +1,5 @@
 package lesson12;
-import java.util.Scanner;
+
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
