@@ -2,7 +2,6 @@ package com.andersen.lesson12;
 
 import lesson12.FunctionTriangle;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class FunctionTriangleTest {
