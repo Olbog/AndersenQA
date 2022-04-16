@@ -1,4 +1,4 @@
-package com.andersen;
+package com.andersen.lesson10;
 
 
 import org.openqa.selenium.WebDriver;

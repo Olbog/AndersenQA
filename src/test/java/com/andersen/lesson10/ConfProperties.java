@@ -1,4 +1,4 @@
-package com.andersen;
+package com.andersen.lesson10;
 
 import java.io.FileInputStream;
 import java.io.IOException;
