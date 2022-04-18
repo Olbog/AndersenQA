@@ -1,12 +1,9 @@
 package lesson12;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class FunctionTriangle {
-
-    private static final Logger LOGGER = LogManager.getLogger(FunctionTriangle.class);
-
 
     public double rez(){
 

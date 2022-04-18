@@ -2,7 +2,7 @@ package com.andersen.lesson12;
 
 import lesson12.FunctionTriangle;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.Test;
+
 
 class FunctionTriangleTest {
 
