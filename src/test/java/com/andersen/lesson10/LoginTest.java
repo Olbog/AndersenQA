@@ -42,9 +42,3 @@ public class LoginTest {
         driver.quit(); }
 
 }
-
-
-/**
- *         driver.findElement(By.id("signupform- email")).sendKeys( "testLogin@test.com");
- *         driver.findElement(By.id("signup_btn")).click();
- */
