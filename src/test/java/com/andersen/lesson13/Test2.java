@@ -10,21 +10,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
-
-public class Test1 {
+public class Test2 {
     @Test
     public void ftiGroup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty ("chromedriver"));
         WebDriver driver = new ChromeDriver();
+        String a = "Test number 2";
+        Assert.assertEquals("Test number 2", a);
         driver.get("https://andersenlab.com/");
-        String a = "Test number 1";
-        Assert.assertEquals("Test number 1", a);
         driver.manage().window().maximize();
         Thread.sleep(7000);
-        WebElement ftiGroup = driver.findElement(By.xpath(ConfProperties.getProperty("ftiGroupElement")));
+        WebElement ftiGroup = driver.findElement(By.xpath(ConfProperties.getProperty("skype")));
         ftiGroup.click();
         driver.quit();
     }
-
-
 }
