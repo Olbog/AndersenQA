@@ -9,9 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 
 public class Test1 {
+    private static final Logger LOGGER = LogManager.getLogger(Test1.class);
     @Test
     public void ftiGroup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty ("chromedriver"));
@@ -23,6 +26,7 @@ public class Test1 {
         accept.click();
         WebElement ftiGroup = driver.findElement(By.xpath(ConfProperties.getProperty("ftiGroupElement")));
         ftiGroup.click();
+        LOGGER.info("All right");
 
         for(String winHandle : driver.getWindowHandles()){
             driver.switchTo().window(winHandle);

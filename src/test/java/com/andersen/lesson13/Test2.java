@@ -9,8 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class Test2 {
+    private static final Logger LOGGER = LogManager.getLogger(Test2.class);
     @Test
     public void ftiGroup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty ("chromedriver"));
