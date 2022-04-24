@@ -15,13 +15,19 @@ public class Test2 {
     public void ftiGroup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty ("chromedriver"));
         WebDriver driver = new ChromeDriver();
-        String a = "Test number 2";
-        Assert.assertEquals("Test number 2", a);
+
         driver.get("https://andersenlab.com/");
         driver.manage().window().maximize();
-        Thread.sleep(7000);
+
+        WebElement accept = driver.findElement(By.xpath(ConfProperties.getProperty("acceptCookies")));
+        accept.click();
         WebElement ftiGroup = driver.findElement(By.xpath(ConfProperties.getProperty("skype")));
         ftiGroup.click();
+
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+        }
+        Assert.assertEquals("https://join.skype.com/aM8R4P4dNJdy",driver.getCurrentUrl() );
         driver.quit();
     }
 }

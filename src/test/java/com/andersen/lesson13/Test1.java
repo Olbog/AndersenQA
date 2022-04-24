@@ -17,12 +17,18 @@ public class Test1 {
         System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty ("chromedriver"));
         WebDriver driver = new ChromeDriver();
         driver.get("https://andersenlab.com/");
-        String a = "Test number 1";
-        Assert.assertEquals("Test number 1", a);
+
         driver.manage().window().maximize();
-        Thread.sleep(7000);
+        WebElement accept = driver.findElement(By.xpath(ConfProperties.getProperty("acceptCookies")));
+        accept.click();
         WebElement ftiGroup = driver.findElement(By.xpath(ConfProperties.getProperty("ftiGroupElement")));
         ftiGroup.click();
+
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+        }
+        Assert.assertEquals("https://andersenlab.com/project-cases/internal-management-system-for-tourism",
+                driver.getCurrentUrl());
         driver.quit();
     }
 
