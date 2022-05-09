@@ -4,7 +4,9 @@ import lesson12.FunctionTriangle;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+
 class FunctionTriangleTest {
+
 
     @org.junit.jupiter.api.Test
     void rez() {
